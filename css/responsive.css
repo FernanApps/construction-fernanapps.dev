@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  .page {
+    padding: 32px 18px 48px;
+    gap: 28px;
+  }
+
+  .terminal-body {
+    font-size: 0.72rem;
+    min-height: 190px;
+  }
+}

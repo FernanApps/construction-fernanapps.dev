@@ -1,0 +1,157 @@
+.cat-scene {
+  width: min(470px, 92vw);
+  animation: blurFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+.cat-scene svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cat-scene [class^="anim-"],
+.cat-scene [class*=" anim-"] {
+  transform-box: fill-box;
+}
+
+.anim-paw-a {
+  animation: pawHit 0.16s ease-in-out infinite alternate;
+}
+
+.anim-paw-b {
+  animation: pawHit 0.16s ease-in-out 0.16s infinite alternate;
+}
+
+@keyframes pawHit {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-6px); }
+}
+
+.anim-speed-a {
+  animation: speedBlink 0.32s linear infinite;
+}
+
+.anim-speed-b {
+  animation: speedBlink 0.32s linear 0.16s infinite;
+}
+
+@keyframes speedBlink {
+  0%, 12% { opacity: 0.12; }
+  40%, 70% { opacity: 0.8; }
+  100% { opacity: 0.12; }
+}
+
+.anim-key-a {
+  animation: keyFlash 0.32s steps(1) infinite;
+}
+
+.anim-key-b {
+  animation: keyFlash 0.32s steps(1) 0.16s infinite;
+}
+
+@keyframes keyFlash {
+  0%, 38% { opacity: 0.85; }
+  42%, 100% { opacity: 0.08; }
+}
+
+.anim-cat {
+  animation: catJitter 0.24s steps(2, end) infinite;
+}
+
+@keyframes catJitter {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0.8px, -0.5px); }
+}
+
+.anim-tail {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: tailSwish 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes tailSwish {
+  from { transform: rotate(-6deg); }
+  to   { transform: rotate(9deg); }
+}
+
+.anim-ear {
+  transform-box: fill-box;
+  transform-origin: 30% 100%;
+  animation: earTwitch 6s ease-in-out infinite;
+}
+
+@keyframes earTwitch {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  92% { transform: rotate(4deg); }
+  95% { transform: rotate(-2deg); }
+  97% { transform: rotate(0deg); }
+}
+
+.anim-eye {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: eyeBlink 4.2s ease-in-out infinite;
+}
+
+@keyframes eyeBlink {
+  0%, 91%, 100% { transform: scaleY(1); }
+  94% { transform: scaleY(0.08); }
+  97% { transform: scaleY(1); }
+}
+
+.anim-head {
+  transform-box: fill-box;
+  transform-origin: 50% 85%;
+  animation: headBob 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes headBob {
+  from { transform: translateY(0) rotate(0deg); }
+  to   { transform: translateY(1.6px) rotate(-1.2deg); }
+}
+
+.anim-screenline {
+  transform-origin: 0% 50%;
+  animation: codeType 4.8s steps(10, end) infinite;
+}
+
+.anim-screenline:nth-child(2) { animation-delay: 0.55s; }
+.anim-screenline:nth-child(3) { animation-delay: 1.1s; }
+.anim-screenline:nth-child(4) { animation-delay: 1.65s; }
+.anim-screenline:nth-child(5) { animation-delay: 2.2s; }
+.anim-screenline:nth-child(6) { animation-delay: 2.75s; }
+
+@keyframes codeType {
+  0% { transform: scaleX(0); }
+  28%, 100% { transform: scaleX(1); }
+}
+
+.anim-screen-cursor {
+  animation: blink 0.55s steps(2, start) infinite;
+}
+
+.anim-glow {
+  animation: screenFlicker 3.2s ease-in-out infinite;
+}
+
+@keyframes screenFlicker {
+  0%, 100% { opacity: 0.16; }
+  45% { opacity: 0.22; }
+  55% { opacity: 0.14; }
+  70% { opacity: 0.2; }
+}
+
+.anim-glyph {
+  animation: glyphRise 2.1s ease-out infinite;
+  opacity: 0;
+}
+
+.anim-glyph.g2 { animation-delay: 0.7s; }
+.anim-glyph.g3 { animation-delay: 1.4s; }
+
+@keyframes glyphRise {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.75; }
+  70% { opacity: 0.25; }
+  100% { transform: translateY(-26px); opacity: 0; }
+}
